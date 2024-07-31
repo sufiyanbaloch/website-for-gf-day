@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madam Sketch</title>
+    <link rel="stylesheet" href="sketch.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sketch-container">
+            <img id="sketch" src="images/Sketch_1722410221756.jpg" alt="Sketch" class="sketch">
+        </div>
+        <button class="cta-button" onclick="goFurther()">Let's Go Even Further from This</button>
+    </div>
+
+    <script>
+        document.getElementById('sketch').addEventListener('click', function() {
+    if (this.requestFullscreen) {
+        this.requestFullscreen();
+    } else if (this.mozRequestFullScreen) {
+        this.mozRequestFullScreen();
+    } else if (this.webkitRequestFullscreen) {
+        this.webkitRequestFullscreen();
+    } else if (this.msRequestFullscreen) {
+        this.msRequestFullscreen();
+    }
+});
+
+function goFurther() {
+    window.location.href = 'letter.html'; // Replace with your target URL
+}
+
+    </script>
+</body>
+</html>

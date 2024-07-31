@@ -1,0 +1,124 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&display=swap');
+
+
+body {
+    font-family: 'Delius Unicase', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #967bb6, #f7cac9);
+}
+
+.text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.milestone {
+    margin-bottom: 50px;
+}
+
+.milestone h1 {
+    font-size: 36px;
+    color: white;
+    background: transparent;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cards-container {
+    position: relative;
+    width: 900px; /* Adjusted for visibility */
+    height: 900px; /* Adjusted for visibility */
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    opacity: 0;
+    transform: rotate(30deg);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    position: absolute;
+    width: 300px; /* Larger card size */
+    height: 300px; /* Larger card size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure content is cropped */
+}
+
+.card img {
+    width: 80%; /* Smaller than the card width */
+    height: 80%; /* Smaller than the card height */
+    object-fit: cover; /* Crop the image to cover the card area */
+    border-radius: 15px; /* Match card's border radius */
+}
+
+.card.appear {
+    opacity: 1;
+    transform: rotate(0);
+}
+
+.card1 {
+    top: 7%;
+    left: -10%;
+}
+
+.card2 {
+    top: 7%;
+    right: -10%;
+}
+
+.card3 {
+    top: 60%;
+    left: -10%;
+}
+
+.card4 {
+    bottom: 6%;
+    right: -11%;
+}
+
+.bottom-button-container {
+    position: absolute; /* Position it at the bottom */
+    bottom: 20px; /* Space from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10; /* Ensure it is above other elements */
+}
+
+.more-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: #967bb6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.more-button:hover {
+    background-color: #805a9d;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

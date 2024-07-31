@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milestone Page</title>
+    <link rel="stylesheet" href="finalpage.css">
+</head>
+<body>
+    <div class="text-container">
+        <div class="milestone">
+            <h1 id="milestone-text">Today marks day 0 of us</h1>
+        </div>
+    </div>
+    <div class="cards-container">
+        <div class="card card1">
+            <img src="images/449812041_463585543300381_6008884462249008803_n.jpg" alt="Card 1 Image">
+        </div>
+        
+        <div class="card card2">
+            <img src="images/451454189_406922989068014_8884676829608744248_n.jpg" alt="Card 2 Image">
+        </div>
+        
+        <div class="card card3">
+            <img src="images/451699502_792624013043047_3664511501438534048_n.jpg" alt="Card 3 Image">
+        </div>
+        
+        <div class="card card4">
+            <img src="images/451957588_497658436177307_6346192031537997047_n.jpg" alt="Card 4 Image">
+        </div>
+    </div>
+    <div class="bottom-button-container hidden">
+        <button class="more-button" onclick="moreContent()">Last Button On This Page </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('appear');
+                }, index * 500); // Stagger the animation by 500ms for each card
+            });
+
+            // Calculate and update the milestone text
+            const startDate = new Date('2023-04-04'); // Start date
+            const currentDate = new Date();
+            const timeDifference = currentDate - startDate;
+            const dayDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            
+            const milestoneText = document.getElementById('milestone-text');
+            milestoneText.textContent = `Today Marks Day ${dayDifference} Of Us Together`;
+        });
+        function moreContent() {
+        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }
+    </script>
+</body>
+</html>

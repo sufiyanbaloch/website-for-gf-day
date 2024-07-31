@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Might Be A Letter </title>
+    <link rel="stylesheet" href="letter.css">
+</head>
+<body>
+    <div class="button-container">
+        <button class="reveal-button" onclick="revealImages()">Click to Reveal</button>
+    </div>
+
+    <div class="container hidden">
+        <div class="image-wrapper">
+            <img id="image-display" src="images/download (2).jpg" alt="Image Display" class="image" onclick="openModal(this)">
+        </div>
+        
+        <div class="radio-buttons">
+            <input type="radio" id="show-image1" name="image" checked>
+            <label for="show-image1" class="radio-label"></label>
+
+            <input type="radio" id="show-image2" name="image">
+            <label for="show-image2" class="radio-label"></label>
+
+            <input type="radio" id="show-image3" name="image">
+            <label for="show-image3" class="radio-label"></label>
+        </div>
+
+        <!-- Modal -->
+        <div id="image-modal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modal-image">
+        </div>
+    </div>
+
+    <!-- New Button at the Bottom -->
+    <div class="bottom-button-container hidden">
+        <button class="more-button" onclick="moreContent()">I have something more for you</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const imageDisplay = document.getElementById('image-display');
+    
+            document.getElementById('show-image1').addEventListener('change', () => {
+                imageDisplay.src = 'images/download (2).jpg';
+            });
+
+            document.getElementById('show-image2').addEventListener('change', () => {
+                imageDisplay.src = 'images/download (3).jpg';
+            });
+
+            document.getElementById('show-image3').addEventListener('change', () => {
+                imageDisplay.src = 'images/download (4).jpg';
+            });
+        });
+
+        function openModal(img) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-image');
+            modal.style.display = 'block';
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('image-modal');
+            modal.style.display = 'none';
+        }
+
+        function revealImages() {
+            document.querySelector('.container').classList.remove('hidden');
+            document.querySelector('.button-container').classList.add('hidden');
+            document.querySelector('.bottom-button-container').classList.remove('hidden');
+        }
+
+        function moreContent() {
+            window.location.href = "finalpage.html";
+        }
+       
+    </script>
+</body>
+</html>

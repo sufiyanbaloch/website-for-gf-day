@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Seasons:wght@400&display=swap');
+
+body {
+    font-family: 'Seasons', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #4b0090, #a14c8c);
+}
+
+.button-container {
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.container.hidden {
+    display: none;
+}
+
+.reveal-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    background: #967bb6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.reveal-button:hover {
+    background: #805a9d;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+.image-wrapper {
+    margin-bottom: 20px;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #967bb6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.image:hover {
+    transform: scale(1.05);
+}
+
+.radio-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.radio-label {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 30px;
+    color: #333;
+}
+
+.radio-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #967bb6;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+input[type="radio"]:checked + .radio-label::before {
+    background: #967bb6;
+    border-color: #967bb6;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    border: 2px solid #967bb6;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #967bb6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.bottom-button-container {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+}
+
+.more-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    background: #967bb6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.more-button:hover {
+    background: #805a9d;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,140 @@
+body {
+    background: linear-gradient(135deg, #4b0082, #a14c8c); /* Darker gradient of lavender and roses */
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 1200px; /* Increased max-width for larger profiles */
+    padding: 2em;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+.title {
+    font-size: 3em;
+    margin-bottom: 2em;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 1.5s ease-out, bounceIn 1s ease-out;
+}
+
+.profiles {
+    display: flex;
+    justify-content: center;
+    gap: 3em; /* Increased gap between profiles */
+    margin-bottom: 2em;
+}
+
+.profile {
+    width: 250px; /* Increased width */
+    height: 250px; /* Increased height */
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #333;
+    border: 3px solid transparent;
+    position: relative;
+    perspective: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.profile-img {
+    width: 100%;
+    height: 80%; /* Adjust height to fit profile size */
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease;
+    filter: brightness(0.85); /* Adjusted brightness to avoid excessive brightening */
+}
+
+.profile .name {
+    padding: 0.5em;
+    font-size: 1.5em; /* Increased font size */
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.8);
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    transition: background 0.4s ease;
+    width: 100%; /* Ensure name spans full width of profile */
+    text-align: center;
+}
+
+.profile:hover {
+    transform: scale(1.1); /* Slightly larger scale on hover */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+.profile:hover .profile-img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    filter: brightness(0.9); /* Slightly lighter brightness on hover */
+}
+
+.profile:hover .name {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.profile.selected {
+    border-color: #e50914; /* Maintain vibrant border color */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Maintain box shadow effect */
+}
+
+.profile.selected .profile-img {
+    transform: scale(1.05); /* Same zoom effect as hover */
+    filter: brightness(0.85); /* Maintain a more subdued brightness level */
+}
+
+.profile .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    mix-blend-mode: overlay;
+}
+
+.profile:hover .overlay {
+    opacity: 1;
+}
+
+.hop-in-btn {
+    background-color: #e50914;
+    border: none;
+    color: white;
+    padding: 1em 3em;
+    font-size: 1.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: block; /* Ensure button is a block element to center it */
+    margin: 0 auto; /* Center horizontally */
+    margin-top: 2em; /* Spacing between profiles and button */
+    text-align: center;
+}
+
+.hop-in-btn:hover {
+    background-color: #b81d24;
+    transform: scale(1.05);
+}
+
+.hop-in-btn:focus {
+    outline: none;
+}
